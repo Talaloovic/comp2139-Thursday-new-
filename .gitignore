@@ -1,1 +1,11 @@
 .vs/
+bin/
+obj/
+*.dll
+*.pdb
+*.cache
+*.json
+*.nuget.*
+*.sourcelink.json
+apphost
+
