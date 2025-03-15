@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using COMP2139_ICE.Areas.ProjectManagement.Controllers;
 using Microsoft.AspNetCore.Mvc;
 using COMP2139_ICE.Models;
 
@@ -34,5 +35,23 @@ public class HomeController : Controller
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    public IActionResult GeneralSearch(string searchType, string searchString)
+    {
+        if (searchType == "projects")
+        {
+            return RedirectToAction(nameof(ProjectController.Search), "Project", new { searchString = searchString });
+
+
+        }
+
+        else if (searchType == "tasks")
+        {
+            return RedirectToAction(nameof(ProjectTaskController.Search), "ProjectTask", new { searchString = searchString });
+        }
+        
+        return RedirectToAction(nameof(Index), "Home");
+        
     }
 }
