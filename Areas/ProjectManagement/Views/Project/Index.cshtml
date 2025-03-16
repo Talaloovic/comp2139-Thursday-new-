@@ -24,6 +24,8 @@
             <th>Name</th>
             <th>Action</th>
             <th>Description</th>
+            <th>Summary</th>
+            <th>Action</th>
         </tr>
         </thead>
         
@@ -32,8 +34,14 @@
         {
             <tr>
                 <td>@project.ProjectId</td>
-                <td>@project.Name</td>
-                <td>@project.Description</td>
+                <td><p>@Html.DisplayFor(model => project.Name, "ProjectName")</p></td>
+                <td><p>@Html.DisplayFor(model => project.Description, "ProjectDescription")</p></td>
+                
+                <td>
+                    @await Component.InvokeAsync("ProjectSummary", new { projectId = project.ProjectId})
+                </td>
+                
+                
                 <td>
                     <a asp-action="Details" asp-route-id="@project.ProjectId" class="btn btn-info">Details</a>
                     <a asp-action="Edit" asp-route-id="@project.ProjectId" class="btn btn-warning">Edit</a>

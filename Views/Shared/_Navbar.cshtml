@@ -12,7 +12,7 @@
             
             <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                 
-                <form class="d-flex accordion-item-center" asp-controller="Home" asp-action="GeneralSearch" method="get">
+                <form class="d-flex accordion-item-center" asp-area="" asp-controller="Home" asp-action="GeneralSearch" method="get">
                     <div class="input-group"> 
                         <input class="form-control me-2" type="text" place="Search....!" name="searchString" required/>
                         
@@ -41,7 +41,7 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Project" asp-action="Index"><i class="fa-solid fa-list-check"></i> Projects</a>
+                        <a class="nav-link text-dark" asp-area="ProjectManagement" asp-controller="Project" asp-action="Index"><i class="fa-solid fa-list-check"></i> Projects</a>
                     </li>
 
                 </ul>
