@@ -54,4 +54,14 @@ public class HomeController : Controller
         return RedirectToAction(nameof(Index), "Home");
         
     }
+
+    public IActionResult NotFound(int statusCode)
+    {
+        if (statusCode == 404)
+        {
+            return View("NotFound");
+        }
+        return View("error");
+        
+    }
 }
